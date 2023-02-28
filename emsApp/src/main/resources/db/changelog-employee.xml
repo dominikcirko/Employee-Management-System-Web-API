@@ -44,7 +44,7 @@
                 tableName="employee"/>
     </changeSet>
 
-    <changeSet  author="me"  id="employee-3">
+    <changeSet author="me" id="employee-3">
         <renameColumn
                 columnDataType="varchar(255)"
                 newColumnName="job_title"
@@ -53,7 +53,7 @@
                 tableName="employee"/>
     </changeSet>
 
-    <changeSet  author="me"  id="employee-4">
+    <changeSet author="me" id="employee-4">
         <renameColumn
                 columnDataType="varchar(255)"
                 newColumnName="phone_number"
@@ -64,7 +64,7 @@
 
     <changeSet author="me" id="employee-5">
         <dropColumn tableName="employee">
-            <column name="department" />
+            <column name="department"/>
         </dropColumn>
     </changeSet>
 
@@ -83,7 +83,6 @@
             </column>
         </addColumn>
     </changeSet>
-
 
 
 </databaseChangeLog>

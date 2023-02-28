@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
@@ -25,7 +26,7 @@ public class EmployeeController {
     DepartmentService departmentService;
 
     @GetMapping("/{id}")
-    ResponseEntity<Optional<Employee>> getEmployee(@PathVariable Long id){
+    ResponseEntity<Optional<Employee>> getEmployee(@PathVariable Long id) {
 
         return new ResponseEntity<>(employeeService.getEmployee(id), HttpStatus.FOUND);
     }
@@ -37,7 +38,7 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/{id}")
-    ResponseEntity<Employee> deleteEmployee(@PathVariable Long id){
+    ResponseEntity<Employee> deleteEmployee(@PathVariable Long id) {
         employeeService.deleteEmployee(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

@@ -17,7 +17,10 @@ public class DepartmentServiceImpl implements DepartmentService {
     DepartmentRepository departmentRepository;
 
     @Override
-    public Department createDepartment(Department department) { return departmentRepository.save(department);}
+    public Department createDepartment(Department department) {
+        return departmentRepository.save(department);
+    }
+
     @Override
     public void deleteDepartment(Long id) {
         departmentRepository.deleteById(id);
@@ -28,13 +31,4 @@ public class DepartmentServiceImpl implements DepartmentService {
         return (List<Department>) departmentRepository.findAll();
     }
 
-/*    @Override
-    public Department getDepartmentByName(String name) {
-        Optional<Department> department = getDepartments()
-                .stream()
-                .filter(d -> d.getDepartmentName().equals(name))
-                .findFirst();
-        if (department.isPresent()) return department.get();
-        else return null;
-    }*/
 }
