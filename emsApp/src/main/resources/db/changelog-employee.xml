@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="employee-1" author="me">
+        <createTable tableName="employee">
+            <column name="id" type="bigint" autoIncrement="false">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="address" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phoneNumber" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="jobTitle" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="salary" type="decimal(10,2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="department" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="age" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="me" id="employee-2">
+        <addAutoIncrement
+                columnDataType="bigint"
+                columnName="id"
+                incrementBy="1"
+                tableName="employee"/>
+    </changeSet>
+
+    <changeSet  author="me"  id="employee-3">
+        <renameColumn
+                columnDataType="varchar(255)"
+                newColumnName="job_title"
+                oldColumnName="jobTitle"
+                schemaName="public"
+                tableName="employee"/>
+    </changeSet>
+
+    <changeSet  author="me"  id="employee-4">
+        <renameColumn
+                columnDataType="varchar(255)"
+                newColumnName="phone_number"
+                oldColumnName="phoneNumber"
+                schemaName="public"
+                tableName="employee"/>
+    </changeSet>
+
+    <changeSet author="me" id="employee-5">
+        <dropColumn tableName="employee">
+            <column name="department" />
+        </dropColumn>
+    </changeSet>
+
+    <changeSet author="me" id="employee-6">
+        <renameColumn
+                tableName="employee"
+                oldColumnName="department"
+                newColumnName="departmentName"
+                columnDataType="varchar(50)"/>
+    </changeSet>
+
+    <changeSet author="me" id="employee-7">
+        <addColumn tableName="employee">
+            <column name="department_name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+
+
+
+</databaseChangeLog>
