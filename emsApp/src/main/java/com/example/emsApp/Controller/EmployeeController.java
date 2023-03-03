@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @AllArgsConstructor
 @RestController
-@RequestMapping("/employee")
+@RequestMapping("/employees")
 public class EmployeeController {
     @Autowired
     EmployeeService employeeService;
@@ -27,7 +27,6 @@ public class EmployeeController {
 
     @GetMapping("/{id}")
     ResponseEntity<Optional<Employee>> getEmployee(@PathVariable Long id) {
-
         return new ResponseEntity<>(employeeService.getEmployee(id), HttpStatus.FOUND);
     }
 

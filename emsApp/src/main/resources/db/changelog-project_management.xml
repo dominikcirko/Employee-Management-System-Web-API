@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet id="project_management-1" author="me">
+        <createTable tableName="project_management">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="project_description" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="hours_worked" type="decimal">
+                <constraints nullable="false"/>
+            </column>
+            <column name="project_manager" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="start_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="due_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="employees_on_project" type="text[]">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="me" id="project-management-2">
+        <renameColumn tableName="project_management"
+                      oldColumnName="hours_worked"
+                      newColumnName="max_hours"/>
+    </changeSet>
+
+    <changeSet author="me" id="project-management-3">
+        <addColumn tableName="project_management">
+            <column name="client" type="varchar(20)"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>
