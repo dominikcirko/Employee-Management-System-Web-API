@@ -29,10 +29,9 @@ public class ProjectManagement {
     @Column(name = "due_date", nullable = false)
     private LocalDate dueDate;
     @Column(name = "max_hours", nullable = false)
-    private final Double maxHoursPerEmployee=40.0;
+    private final Double maxHoursPerEmployee = 40.0;
     @Column(name = "employees_on_project", nullable = false)
     private List<String> employeesOnProject;
-
 
 
 }

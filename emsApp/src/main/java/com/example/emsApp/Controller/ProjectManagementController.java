@@ -1,24 +1,18 @@
 package com.example.emsApp.Controller;
 
 import com.example.emsApp.Entity.Department;
-import com.example.emsApp.Entity.Employee;
 import com.example.emsApp.Entity.ProjectManagement;
 import com.example.emsApp.Service.EmployeeService;
 import com.example.emsApp.Service.ProjectManagementService;
-import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
+
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -26,9 +20,9 @@ import java.util.stream.Collectors;
 @RequestMapping("/projects")
 public class ProjectManagementController {
     @Autowired
-    ProjectManagementService projectManagementService;
+    private ProjectManagementService projectManagementService;
     @Autowired
-    EmployeeService employeeService;
+    private EmployeeService employeeService;
 
     @GetMapping("/all")
     public ResponseEntity<List<ProjectManagement>> getAllProjects() {

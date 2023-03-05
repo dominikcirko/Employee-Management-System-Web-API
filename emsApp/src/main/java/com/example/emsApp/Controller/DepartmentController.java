@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @AllArgsConstructor
@@ -25,7 +24,7 @@ public class DepartmentController {
 
     @PostMapping
     public ResponseEntity<Department> createDepartment(@RequestBody Department department) {
-        departmentService.getDepartments().add(department); //add department to list
+        departmentService.getDepartments().add(department); //add department to list of departments
         return new ResponseEntity<>(departmentService.createDepartment(department), HttpStatus.CREATED);
     }
 
