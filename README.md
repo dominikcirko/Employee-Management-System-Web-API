@@ -1,5 +1,5 @@
 # Employee-Management-System-Web-API
-To make application runnable, following steps are required:
+To make the application runnable, following steps are required:
 
 1. create application.properties file in ./src/main/resources and copy-pase the following contents:
 
