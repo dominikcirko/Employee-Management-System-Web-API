@@ -47,14 +47,17 @@ public class EmployeeController {
                                                           @RequestParam(required = false) String jobTitle,
                                                           @RequestParam(required = false) BigDecimal salary,
                                                           @RequestParam(required = false) Integer age) {
+
         List<Employee> employees = employeeService.getAllEmployees();
-        employees = employees.stream()
+        {employees = employees.stream()
                 .filter(employee -> name == null || employee.getName().equals(name))
                 .filter(employee -> email == null || employee.getEmail().equals(email))
                 .filter(employee -> jobTitle == null || employee.getJobTitle().equals(jobTitle))
                 .filter(employee -> salary == null || employee.getSalary().equals(salary))
                 .filter(employee -> age == null || employee.getAge().equals(age))
                 .collect(Collectors.toList());
+        }
+
 
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }

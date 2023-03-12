@@ -7,4 +7,5 @@
     <includeAll path="com/example/db/changelog-employee/"/>
     <includeAll path="com/example/db/changelog-department/"/>
     <includeAll path="com/example/db/changelog-project_management/"/>
+    <includeAll path="com/example/db/changelog-user/"/>
 </databaseChangeLog>

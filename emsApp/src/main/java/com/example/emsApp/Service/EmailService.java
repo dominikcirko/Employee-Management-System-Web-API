@@ -15,6 +15,7 @@ import java.io.IOException;
 
 @Service
 public class EmailService {
+
     @Value("${sendgrid.api.key}")
     private String sendgridApiKey;
 

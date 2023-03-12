@@ -50,8 +50,9 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
 
         //if entered employee exists in employee database, do nothing, else: throw exception
         for (String employeeOnProject : employeesOnProject) {
-            if (validNames.contains(employeeOnProject)) {
-            } else throw new IllegalArgumentException("Employee " + employeeOnProject + " does not exist");
+            if (!validNames.contains(employeeOnProject)) {
+                throw new IllegalArgumentException("Employee " + employeeOnProject + " does not exist");
+            }
         }
     }
 
