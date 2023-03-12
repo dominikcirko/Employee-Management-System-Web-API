@@ -37,5 +37,6 @@ spring.jpa.properties.hibernate.schema_update.unique_constraint_strategy=RECREAT
 5. I recommend downloading and installing Postman to test API calls
 
 Note: Create departments before creating employees because employee can only be in departments that already exist.
+
 Note 2: When sending email, in "from" field, you have to enter the email you used to create SendGrid account because that email is tied to API key you created.
 
