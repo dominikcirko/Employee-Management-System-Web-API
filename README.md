@@ -33,8 +33,8 @@ spring.jpa.properties.hibernate.schema_update.unique_constraint_strategy=RECREAT
 
 3. After you copied the key, in application.properties, create sendgrid.api.key property and paste your key.
 4. Download and install PostgreSQL database
-  4.1 Create database named "ems-db4" with "postgres" as user and "password" as password
-5. I recommend downloading and installing Postman to test API calls
+  4.1 Create database named "ems-db10" with "postgres" as user and "password" as password
+5. I recommend downloading and installing Postman to test API calls.
 
 Note: Create departments before creating employees because employee can only be in departments that already exist.
 
