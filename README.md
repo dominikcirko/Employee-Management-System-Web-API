@@ -26,9 +26,13 @@ liquibase.enabled=true
 spring.jpa.properties.hibernate.schema_update.unique_constraint_strategy=RECREATE_QUIETLY
 
 2. Sendgrid integration: 
+
   2.1 Go to SendGrid website and create free account
+  
   2.2 Go to Settings->API keys->Create api key 
+  
   2.3 Create api key with full access 
+  
   2.4 After creating it, copy the key.
 
 3. After you copied the key, in application.properties, create sendgrid.api.key property and paste your key.
